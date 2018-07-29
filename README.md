@@ -2,6 +2,18 @@
 
 This is the most simple app creator script you will find. It simply copies starter template files into a new directory. This script will probably get more complicated in the future, but for now this meets my needs.
 
+## Installation
+
+Clone this repository somewhere and then cd into this directory.
+
+```
+alias elm-init="`pwd`/elm-init"
+```
+
+This doesn't actually install anything, it just creates an alias which points to the script in the repository directory. The nice thing about this approach is that you can update the app by pulling the latest from github.
+
+The alias will go away once you close your terminal windows unless you add it to your .profile or .bashrc or .zshrc file. Type alias in the terminal and find the `elm-init=...` line, copy that and paste it into whichever shell configuration script you use.
+
 ## Usage
 
 ```
@@ -21,7 +33,7 @@ Create an app named my-elm-app, using the default template, in the current direc
 elm-init my-elm-app
 ```
 
-Create an app named my-elm-app, using the named temlate, in the current directory
+Create an app named my-elm-app, using the named template, in the current directory
 
 ```
 elm-init -t default my-elm-app
