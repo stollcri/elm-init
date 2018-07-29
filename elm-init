@@ -15,10 +15,27 @@ print_help() {
     echo
 }
 
+# replace string $1 with string $2 in file $3
+replace_string_in_file() {
+    sed -i "" -e "s/$1/$2/g" "$3"
+}
+
 elm_init() {
     APP_NAME=$1
     TEMPLATE_PATH="$TEMPLATES_DIRECTORY/$TEMPLATE_NAME/"
+
     cp -r $TEMPLATE_PATH ./$APP_NAME
+
+    if [ ! -f ./$APP_NAME/elm-package.json ]; then
+        mv ./$APP_NAME/elm-package.json.template ./$APP_NAME/elm-package.json
+    else
+        rm ./$APP_NAME/elm-package.json.template
+    fi
+    
+    if [ "$APP_NAME" != "" ]; then
+        replace_string_in_file "my-elm-application" $APP_NAME ./$APP_NAME/README.md
+        replace_string_in_file "my-elm-application" $APP_NAME ./$APP_NAME/run/index.html
+    fi
 }
 
 PARAM1="$1"
