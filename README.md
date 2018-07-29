@@ -17,12 +17,12 @@ The alias will go away once you close your terminal windows unless you add it to
 ## Usage
 
 ```
-Usage: elm-init [options] [app_name]"
+Usage: elm-init [options] [app_name]
 
-Options:"
+Options:
 
-  -h, --help     output usage information"
-  -t, --template template_name"
+  -h, --help     output usage information
+  -t, --template template_name
 ```
 
 ### Example Usage
