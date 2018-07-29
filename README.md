@@ -27,7 +27,15 @@ Options:"
 
 ### Example Usage
 
-Create an app named my-elm-app, using the default template, in the current directory
+Create an app named my-elm-app, using the default template, in the current directory. This is a way to apply the template to a directory which you have already started, however any existing files will be overwritten if they have the same name.
+
+I normally start off by simply creating an elm file (maybe named Main.elm) and using elm reactor. When I get to the point where I need a more sophisticated build process, then I use elm-init to bring that in. This is main use case for which this tool was made.
+
+```
+elm-init
+```
+
+Create an app named my-elm-app, using the default template. This creates a new directory named my-elm-app in the current directory.
 
 ```
 elm-init my-elm-app
