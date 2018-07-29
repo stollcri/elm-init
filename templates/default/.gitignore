@@ -1,0 +1,13 @@
+# elm-package generated files
+elm-stuff
+# elm-repl generated files
+repl-temp-*
+
+.DS_Store
+dist
+elm.compiled.js
+elm.js
+node_modules
+npm-debug.log
+package-lock.json
+yarn-error.log

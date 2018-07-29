@@ -1,0 +1,40 @@
+#!/bin/bash
+
+SCRIPT_DIRECTORY="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+TEMPLATES_DIRECTORY="$SCRIPT_DIRECTORY/templates"
+TEMPLATE_NAME="default"
+
+print_help() {
+    echo
+    echo "  Usage: elm-init [options] [app_name]"
+    echo
+    echo "  Options:"
+    echo
+    echo "    -h, --help     output usage information"
+    echo "    -t, --template template_name"
+    echo
+}
+
+elm_init() {
+    APP_NAME=$1
+    TEMPLATE_PATH="$TEMPLATES_DIRECTORY/$TEMPLATE_NAME/"
+    cp -r $TEMPLATE_PATH ./$APP_NAME
+}
+
+PARAM1="$1"
+PARAM2="$2"
+PARAM3="$3"
+case $PARAM1 in
+    -h|--help)
+        print_help
+        ;;
+    -t|--template)
+        if [ "$PARAM2" != "" ]; then
+            TEMPLATE_NAME=$PARAM2
+        fi
+        elm_init $PARAM3
+        ;;
+    *)
+        elm_init $PARAM1
+        ;;
+esac
