@@ -1,7 +1,7 @@
 default: run
 
 build:
-	elm-make src/Main.elm --output run/elm.compiled.js --warn
+	elm-make src/Main.elm --output dist/elm.compiled.js --warn
 
 # work directly with elm files
 # this allows you to see update history (state changes)

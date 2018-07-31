@@ -34,7 +34,7 @@ elm_init() {
     
     if [ "$APP_NAME" != "" ]; then
         replace_string_in_file "my-elm-application" $APP_NAME ./$APP_NAME/README.md
-        replace_string_in_file "my-elm-application" $APP_NAME ./$APP_NAME/run/index.html
+        replace_string_in_file "my-elm-application" $APP_NAME ./$APP_NAME/src/index.html
     fi
 }
 
