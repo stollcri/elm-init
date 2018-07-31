@@ -4,6 +4,17 @@ SCRIPT_DIRECTORY="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 TEMPLATES_DIRECTORY="$SCRIPT_DIRECTORY/templates"
 TEMPLATE_NAME="default"
 
+print_elm() {
+    echo
+    echo -e "    \033[1;30m◣\033[0;32m◥ ◣◥ ◣\033[1;34m◥ ◣◥ \033[0m"
+    echo -e "    \033[1;30m◣◥ ◣\033[0;33m◥ ◤\033[0;32m◢ ◣\033[1;34m◥\033[0m"
+    echo -e "    \033[1;30m◤◢ ◤\033[1;34m◢ ◣\033[0;32m◥ ◤\033[0;33m◢\033[0m"
+    echo -e "    \033[1;30m◤\033[1;34m◢ ◣◥ ◤◢ ◣\033[0;33m◥\033[0m"
+    echo
+    echo -e "      elm-init"
+    echo
+}
+
 print_help() {
     echo
     echo "  Usage: elm-init [options] [app_name]"
@@ -49,9 +60,11 @@ case $PARAM1 in
         if [ "$PARAM2" != "" ]; then
             TEMPLATE_NAME=$PARAM2
         fi
+        print_elm
         elm_init $PARAM3
         ;;
     *)
+        print_elm
         elm_init $PARAM1
         ;;
 esac
