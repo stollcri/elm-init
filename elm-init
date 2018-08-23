@@ -37,10 +37,10 @@ elm_init() {
 
     cp -r $TEMPLATE_PATH ./$APP_NAME
 
-    if [ ! -f ./$APP_NAME/elm-package.json ]; then
-        mv ./$APP_NAME/elm-package.json.template ./$APP_NAME/elm-package.json
+    if [ ! -f ./$APP_NAME/elm.json ]; then
+        mv ./$APP_NAME/elm.json.template ./$APP_NAME/elm.json
     else
-        rm ./$APP_NAME/elm-package.json.template
+        rm ./$APP_NAME/elm.json.template
     fi
     
     if [ "$APP_NAME" != "" ]; then
