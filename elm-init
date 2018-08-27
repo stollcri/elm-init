@@ -42,11 +42,15 @@ elm_init() {
     else
         rm ./$APP_NAME/elm.json.template
     fi
-    
+
     if [ "$APP_NAME" != "" ]; then
         replace_string_in_file "my-elm-application" $APP_NAME ./$APP_NAME/README.md
         replace_string_in_file "my-elm-application" $APP_NAME ./$APP_NAME/src/index.html
     fi
+
+    cd ./$APP_NAME
+    npm install
+    cd ..
 }
 
 PARAM1="$1"

@@ -1,7 +1,11 @@
 {
   "scripts": {
-    "start": "parcel serve src/index.html --port 8088 --no-cache --out-file index.html",
-    "build": "parcel build src/index.html --no-source-maps --no-cache --out-file index.html"
+    "start": "elm reactor",
+    "watch": "echo *DISABLED* parcel serve src/index.html --port 8088 --no-cache --out-file index.html",
+    "build": "echo *DISABLED* parcel build src/index.html --no-source-maps --no-cache --out-file index.html"
+  },
+  "dependencies": {
+    "elm": "^0.19.0"
   },
   "devDependencies": {
     "parcel": "^1.9.7",
