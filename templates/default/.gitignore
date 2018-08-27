@@ -5,9 +5,9 @@ repl-temp-*
 
 .cache
 .DS_Store
-dist
-elm.compiled.js
 elm.js
+elm.compiled.js
+elm.min.js
 node_modules
 npm-debug.log
 package-lock.json
